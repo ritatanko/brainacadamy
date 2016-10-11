@@ -1,6 +1,11 @@
-var str = `one two three four five`;
-
-function reverseString(string) {
-	return string.split('').reverse().join('');
+function createGreeting(greeting) {
+  return function (name) {
+    console.log(`${greeting}, ${name}`);
+  }
 }
-console.log(reverseString(str))
+
+var sayHi = createGreeting("Hi");
+sayHi('Bob');
+
+var sayHello = createGreeting("Hello");
+sayHello("Anna");
